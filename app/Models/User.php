@@ -44,4 +44,20 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // SETTER 
+    // public function setIdsAttribute($value) {
+    //     $this->attributes['ids'] = json_encode($value);
+    // }
+ 
+    // ACCESSOR 
+    // public function getIdsAttribute($value)
+    // {
+    //     return json_decode($value);
+    // }
+
+    // CASTS ARRAY 
+    protected $casts = [
+        'ids' => 'array'
+    ];
 }
