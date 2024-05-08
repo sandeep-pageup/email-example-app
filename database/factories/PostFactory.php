@@ -1,13 +1,13 @@
 <?php
 
+// THERE IS NO NEED TO REGISTER FACTORY ADDITIONALLY ANYWHERE IN PROJECT
+
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
- */
-class UserModelFactory extends Factory
+class PostFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,8 @@ class UserModelFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            'password' => $this->faker->password
+            'user_master_id' => $this->faker->randomElement(User::pluck('id')->toArray()),
+            'post_name' => $this->faker->name
         ];
     }
 }
