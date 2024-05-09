@@ -21,7 +21,6 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Email--ignore-platform-reqs</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,6 +34,10 @@
                         </table>
                     </div>
                 </div>
+            </div>
+             <!-- Button to trigger print -->
+             <div class="card-footer">
+                <button onclick="window.print()" class="btn btn-primary">Print</button>
             </div>
         </div>
     </div>
