@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\WelcomeMail;
+use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Exception;
 use Illuminate\Support\Facades\Mail;
@@ -21,7 +22,9 @@ class EmailController extends Controller
     }
 
     public function download_pdf() {
-        $pdf = Pdf::loadView('welcome');
-        return $pdf->stream();
+        $from = User::all();
+        $to = User::where('id', 212);
+        $pdf = PDF::loadView('welcome',['from'=>$from,'to'=>$to]);
+        return $pdf->stream('my.pdf');
     }
 }

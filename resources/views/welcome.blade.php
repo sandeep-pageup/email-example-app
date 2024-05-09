@@ -6,6 +6,7 @@
     <title>Download PDF</title>
   </head>
   <body>
+    {{ dd($from , $to->first()->name) }}
     <h1>Hello, world!</h1>
   </body>
 </html>
